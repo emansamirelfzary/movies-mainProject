@@ -1,0 +1,11 @@
+.nav-tabs, .nav-tabs .nav-link.active,.nav-tabs .nav-link:hover{
+  border-color:  #434445 !important;
+}
+
+
+
+.nav-tabs .nav-link.active{
+  background-color: var(--main-color) !important;
+  border-radius: 0 !important;
+ 
+}

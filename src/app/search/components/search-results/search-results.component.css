@@ -1,0 +1,45 @@
+section{
+  min-height: 80vh;
+}
+.results .nav{
+  background-color: #222325;
+  border-color: transparent !important;
+}
+
+
+
+.results .nav-pills .nav-link.active {
+  background-color: #1d1e20;
+  color: var(--main-color) !important;
+}
+
+@media screen and (min-width:991px) {
+  .nav,.nav .nav-link,.nav div{
+  width: 250px !important;
+}
+
+}
+
+@media screen and (max-width:768px) {
+
+
+ .nav .nav-link{
+    width: auto;
+  }
+
+  .nav div{
+    width: 100%;
+  }
+  .nav-pills{
+    width: 100% !important;
+  }
+
+  .results{
+    flex-wrap: wrap !important;
+  }
+
+
+
+}
+
+

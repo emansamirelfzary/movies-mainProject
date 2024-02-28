@@ -1,0 +1,95 @@
+.offcanvas-start{
+  flex-grow: 0 !important;
+}
+.multi-search input::placeholder{
+  color: #89898a;
+}
+
+.multi-search input:focus{
+  box-shadow: none;
+}
+
+.multi-search input:focus-within,.multi-search input:focus {
+  background-color: transparent !important;
+  border: none;
+}
+
+.menu-icon span{
+  width: 35px;
+  height: 2px;
+  background-color: var(--main-color);
+}
+
+
+.menu-icon span::after, .menu-icon span::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: var(--main-color);
+}
+
+.menu-icon span::before{
+  top: 10px;
+}
+
+.menu-icon span::after{
+  bottom: 10px;
+}
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+
+.dropdown-menu{
+  transition: 5s !important;
+ 
+}
+
+.dropdown-menu .dropdown-item{
+  line-height: 1 !important;
+}
+
+.dropdown-menu .dropdown-item:hover{
+  background-color: transparent;
+}
+
+.nav-link.active{
+  color: var(--main-color) !important;
+}
+.nav-link.active::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  left: 0;
+  bottom: 0;
+  background-color: var(--main-color) !important;
+}
+
+.active-item{
+  color:red
+}
+
+
+
+@media screen and (max-width:991px) {
+.navbar .container {
+  border-bottom: none !important;
+}
+.nav-link {
+  line-height:40px !important;
+}
+.nav-link.active::before{
+  display: none;
+}
+.dropdown-menu{
+  background-color: transparent !important;
+}
+
+.dropdown-menu .dropdown-item{
+  border-bottom: none !important;
+  color: white;
+}
+}
+

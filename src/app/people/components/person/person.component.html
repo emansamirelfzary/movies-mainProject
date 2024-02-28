@@ -1,0 +1,61 @@
+<section class="sec-padding person-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 text-white mb-4 mb-md-0">
+                <div>
+                    <img [src]="personImg+personInfo.profile_path" alt="person" class="w-100">
+                </div>
+                <h4 class="my-4">Personal Info</h4>
+                <table class="w-100">
+                  <tbody>
+                    <tr>
+                      <th class="main">Born</th>
+                      <td class="text-center">{{personInfo.birthday}}
+                        <br>{{personInfo.place_of_birth}}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="main py-3">Gender</th>
+                      <td class="text-center py-3">{{getGenderText(personInfo.gender)}}
+                      </td>
+                    </tr>
+                    <tr *ngIf="personInfo.deathday!==null">
+                      <th class="main">Death</th>
+                      <td class="text-center">{{personInfo.deathday}}
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <div class="text-center">
+                <a [href]="imbdUrl" class="btn main-bg rounded-pill  text-white mt-3 position-relative main-bg-hover" target="_blank"><span class="position-relative z-3 ">VIEW ON IMDB</span></a>
+                </div>
+            </div>
+            <div class="col-md-9 text-white">
+             <div>
+              <h2 class="mb-4">{{personInfo.name}}</h2>
+              <span class="mb-2 d-inline-block opacity-50" *ngIf="personInfo.biography">Biography
+              </span>
+
+      <div class=" fw-lighter">
+        <ng-container *ngFor="let line of personInfo.biography.split('\n').slice(0, maxLinesToShow * 2); let i = index;">
+          <p align="justify">{{ line }}</p>
+        </ng-container>
+      </div>
+      <div *ngIf="personInfo.biography.split('\n').length > maxLinesToShow * 2 && showMore">
+        <ng-container *ngFor="let line of personInfo.biography.split('\n').slice(maxLinesToShow * 2); let i = index;">
+          <p align="justify">{{ line }}</p>
+        </ng-container>
+      </div>
+      <a class="main cursor" (click)="showMore = !showMore" *ngIf="personInfo.biography.split('\n').length > maxLinesToShow * 2">
+        {{ showMore ? '': 'See more...' }}
+      </a>
+    </div>
+    <app-person-img [personId]="personId"></app-person-img>
+
+            </div>
+        </div>
+        <app-person-movie-credits [personId]="personId"></app-person-movie-credits>
+        <app-person-tv-credits [personId]="personId"></app-person-tv-credits>
+      </div>
+</section>

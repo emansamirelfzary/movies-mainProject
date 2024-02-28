@@ -1,0 +1,64 @@
+
+.home-tv .btn {
+  transition: .3s;
+}
+.home-tv .btn i,  .tv-series .title h2{
+  transition: .5s;
+}
+
+.tv-series img{
+  transition: transform .5s ease;
+}
+
+
+.home-tv .btn:hover{
+color:black !important;
+background-color: white !important;
+}
+
+.home-tv .btn:hover i{
+  transform: translateX(10px);
+}
+
+.series-overlay{
+  background-color: rgba(0, 0, 0, .5);
+  transition: .5s;
+  z-index: 99;
+}
+.tv-series .series-img{
+  border-color: transparent !important;
+}
+.series-info-home {
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba(34, 35, 37,.1);
+  transition: .5s;
+}
+
+.series-info-home span{
+  font-size: .9rem;
+}
+
+.series-info-home .title{
+  border-color: #434445 !important;
+}
+
+
+.tv-series:hover .series-overlay{
+background-color: rgba(0, 0, 0, .3);
+
+}
+
+.tv-series:hover .series-info-home {
+  background-color: transparent;
+  background-image:linear-gradient(to bottom, transparent 20%,rgba(0, 0, 0,.8) 80%);
+}
+.tv-series:hover img{
+  transform: scale(1.1);
+}
+
+.tv-series:hover .title h2{
+  margin-bottom: 1.5rem !important;
+}
+
+

@@ -1,0 +1,16 @@
+<section class="vh-100">
+	<ngb-carousel [showNavigationArrows]="false">
+		<ng-template ngbSlide *ngFor="let slide of sliderMovies" >
+			<div class="picsum-img-wrapper">
+				<img [src]="moviebg+slide.backdrop_path" alt="Random first slide" class="vh-100"/>
+			</div>
+			<div class="carousel-caption ps-5 text-start w-50">
+				<a routerLink="/movie/trending" class="btn main-bg main-bg-hover rounded-0 text-white mb-3">Trending Movies</a>
+				<h2><a [routerLink]="['/moviedetails',slide.id]" class="text-white">{{slide.title}}</a></h2>
+				<p>{{slide.overview.split(' ').splice(0,10).join(' ')}}</p>
+				<a class="btn bg-transparent view-more main-bg-hover rounded-pill text-white" [routerLink]="['/moviedetails',slide.id]">VIEW MORE</a>
+			</div>
+		</ng-template>
+	</ngb-carousel>
+
+</section>

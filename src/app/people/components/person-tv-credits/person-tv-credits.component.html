@@ -1,0 +1,60 @@
+<section class="person-media" *ngIf="personTv.length>0">
+    <div class="container">
+      <div class="w-75 text-white person-media-info">
+        <h3 class="mb-3">Tv</h3>
+      <div class=" border-bottom" *ngFor="let series of personTv.slice(0,10)|removeNullTv">
+      <a [routerLink]="['/tvsereisdetails',series.id]">
+        <div class="row align-items-center">
+        <div class="col-md-8">
+          <div class="row my-2 ">
+            <div class="col-3 col-sm-2">
+              <img [src]="seriesImg+series.poster_path" alt="movie-poster" class="w-100" >
+            </div>
+            <div class="col-9 col-sm-10">
+              <h2 class="h4 text-white main-hover">{{series.name}}</h2>
+              <span class="text-white"><i class="fa-solid fa-star text-warning me-2"></i>{{series.vote_average.toFixed(2)}}</span>
+              <p class="my-2 text-white">{{series.character}}</p>
+            </div>
+
+          </div>
+
+        </div>
+    <div class="col-md-4 text-end text-white">
+          <span>{{series.first_air_date.split('-').slice(0,1)}}</span>
+        </div>
+        </div>
+  </a>
+      </div>
+      <div *ngIf="seeAll">
+      <div class=" border-bottom" *ngFor="let series of personTv.slice(10)|removeNullTv">
+      <a [routerLink]="['/tvsereisdetails',series.id]">
+        <div class="row align-items-center">
+        <div class="col-md-8">
+          <div class="row my-2 ">
+            <div class="col-3 col-sm-2">
+              <img [src]="seriesImg+series.poster_path" alt="movie-poster" class="w-100" >
+            </div>
+            <div class="col-9 col-sm-10">
+              <h2 class="h4 text-white main-hover">{{series.name}}</h2>
+              <span class="text-white"><i class="fa-solid fa-star text-warning me-2"></i>{{series.vote_average.toFixed(2)}}</span>
+              <p class="my-2 text-white">{{series.character}}</p>
+            </div>
+
+          </div>
+
+        </div>
+    <div class="col-md-4 text-end text-white">
+          <span>{{series.first_air_date.split('-').slice(0,1)}}</span>
+        </div>
+        </div>
+  </a>
+      </div>
+  </div>
+  <div class="text-end mt-4">
+  <a class="main cursor" (click)="seeAll= !seeAll" *ngIf="!seeAll && personTv.length>20">
+    {{ seeAll ? '': 'See All...' }}
+  </a>
+  </div>
+  </div>
+    </div>
+  </section>

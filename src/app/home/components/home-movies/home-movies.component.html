@@ -1,0 +1,34 @@
+<section class="sec-padding">
+  <div class="container">
+    <div class="px-md-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2 class="h3 text-white mb-0">Popular Movies</h2>
+    <a class="btn body-bg main-bg-hover rounded-pill popular-link px-4 text-white py-2" routerLink="/movie/popular">View More</a>
+  </div>
+  <div class="row mt-1 gy-4 home-movies">
+    <div class="col-lg-4  col-xl-2 col-sm-6 cursor" *ngFor="let movie of homeMovies">
+      <div class="movie rounded-2">
+        <a [routerLink]="['/moviedetails',movie.id]">
+        <div class=" overflow-hidden">
+      <img [src]="movieImg+movie.poster_path" alt="movie" class="w-100">
+      </div>
+      <div class="p-2 text-white">
+        <span class="main text-uppercase movie-info">movie . <a href="" class="main">review</a>
+        </span>
+        <h2 class="h5 mt-2 pb-3 movie-title border-bottom">{{movie.title}}</h2>
+        <div class="vote">
+          <span *ngIf="movie.vote_average>=2"><i class="fa-solid fa-star text-warning"></i></span>
+          <span *ngIf="movie.vote_average>=4"><i class="fa-solid fa-star text-warning"></i></span>
+          <span *ngIf="movie.vote_average>=6"><i class="fa-solid fa-star text-warning"></i></span>
+          <span *ngIf="movie.vote_average>=8"><i class="fa-solid fa-star text-warning"></i></span>
+          <span *ngIf="movie.vote_average>=9"><i class="fa-solid fa-star text-warning"></i></span>
+        <span class="ms-2">{{movie.vote_average.toFixed(0)}}/10</span>
+        </div>
+      </div>
+      </a>
+      </div>
+      </div>
+  </div>
+  </div>
+  </div>
+</section>

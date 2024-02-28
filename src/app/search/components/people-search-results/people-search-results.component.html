@@ -1,0 +1,18 @@
+<div>
+  <div class="row ms-md-2 mx-0">
+    <div class="col-12 media mb-4" *ngFor="let person of peoplesSearchResults">
+      <a [routerLink]="['/person',person.id]" class="p-0">
+        <div class="row">
+      <div class="col-md-2 col-3 p-0 col-xl-1">
+        <img [src]="personImg+person.profile_path" alt="profile" class="w-100" >
+      </div>
+      <div class="col-md-10 col-9 col-xl-11 text-white  pt-3">
+        <h2 class="h4 mb-2">{{person.name}}</h2>
+        <span>{{getGenderText(person.gender)}}</span>
+        <p class="mt-2">{{person.known_for_department}}</p>
+      </div>
+      </div>
+      </a>
+    </div>
+  </div>
+</div>

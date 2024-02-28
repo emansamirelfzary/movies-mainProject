@@ -1,0 +1,190 @@
+.series-info{
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.overlay{
+  background-color: rgba(31.5, 31.5, 31.5, 0.7);}
+
+.series-info::after{
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 1px;
+  background-color: #dee2e6;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.series-info .container{
+  padding-top: 150px;
+}
+
+.series-info .genres:not(:last-of-type)::before{
+  content: '|';
+  position: absolute;
+  right: -.6rem;
+  ;
+  color:var(--main-color);
+}
+
+.details .btn{
+  font-size: .8rem;
+}
+
+.details h1{
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.details .date{
+  color: #858586;
+}
+
+
+.details .meta, .overview .overview-title, .poster-info span, .poster-info a{
+  font-size: .9rem;
+}
+.poster-info a::before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: white;
+  border-radius: 5rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: .5s;
+  z-index: 1;
+}
+
+.poster-info a:hover::before{
+  width: 97%;
+  height: 95%;
+}
+
+.poster-info a:hover span{
+  color: black;
+}
+
+.details .social span{
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  transition: .5s;
+  position: relative;
+}
+
+.details .social span::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transition: .5s;
+  background-color: white;
+}
+
+.details .social span:hover::before{
+  width: 100%;
+  height: 100%;
+}
+.details .social span:hover{
+  color: black;
+}
+
+
+
+
+.circular-chart {
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 1;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 1.1;
+}
+
+.progress{
+    animation: progress 2s ease-out forwards;
+
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.circular-chart .circle {
+  stroke: var(--main-color);
+}
+
+
+.percentage {
+  fill: white;
+  font-size: .6rem;
+  text-anchor: middle;
+}
+
+
+.overview .rating{
+  width: 255px;
+  height: 30px;
+  background-color: rgb(66 66 68);
+}
+
+.overview .overview-rating{
+  min-width: 10% !important;
+  line-height: 2;
+  font-size: .9rem;
+  transition: 2s ease-out;
+}
+
+.summary p{
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: .7;
+}
+
+.text p::first-letter{
+  font-size: 6rem;
+  font-family: "PT Serif";
+  color: var(--main-color);
+  float: left;
+  line-height: .9;
+}
+
+.text p{
+  line-height: 2;
+}
+
+
+@media screen and (max-width:768px) {
+  .details h1{
+    font-size: 2.5rem;
+  }
+
+  .series-info{
+    background-position: center center;
+    height: auto !important;
+  }
+
+  .details p{
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,14 @@
+<div class="mt-5 text-white person-images">
+  <h3 class="mb-4">Images</h3>
+  <div>
+  <owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let img of personImages">
+      <ng-template carouselSlide>
+        <img [src]="personImg+img.file_path" alt="peronimae">
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+  </div>
+
+</div>

@@ -1,0 +1,9 @@
+.view-more{
+  font-size: .9rem ;
+  border: 2px solid white;
+  transition: .5s;
+}
+
+.view-more:hover{
+  border-color: var(--main-color) !important;
+}

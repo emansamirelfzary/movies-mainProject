@@ -1,0 +1,15 @@
+.popular-link{
+  border: 1px solid var(--main-color) ;
+  font-size: .9rem;
+  line-height: 1.8;
+  transition: .5s;
+
+}
+
+
+@media screen and (min-width:1200px) {
+  .home-movies .col-xl-2{
+    width: 20%;
+  }
+
+}

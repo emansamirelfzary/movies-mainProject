@@ -1,0 +1,41 @@
+<section class="sec-padding">
+  <div class="container">
+<div class="d-flex align-items-start mt-5 results">
+  <div class="nav row nav-pills me-md-3 m-0 border pe-0 flex-wrap align-items-center justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="width:min-content;">
+     <div class="text-white main-bg px-5 py-4 text-center col-12"><h3 class="h5 text-capitalize">search results</h3></div>
+ <button class="nav-link text-white  rounded-0 d-flex justify-content-between py-3 mt-md-2 col-md-12 col-4" id="v-pills-movies-tab" data-bs-toggle="pill" data-bs-target="#v-pills-movies" type="button" role="tab" aria-controls="v-pills-movies" aria-selected="true" [class.active]="moviesSearchResults.length > 0 || tvSearchResults.length==0 && peopleSearchResults.length==0"><span>Movies</span><span>({{moviesSearchResults.length}})</span></button>
+    <button class="nav-link text-white rounded-0 d-flex justify-content-between py-3 col-md-12 col-4" id="v-pills-tv-tab" data-bs-toggle="pill" data-bs-target="#v-pills-tv" type="button" role="tab" aria-controls="v-pills-tv" aria-selected="false" [class.active]="tvSearchResults.length > 0 && moviesSearchResults.length==0 && peopleSearchResults.length==0" ><span>Tv Shows</span><span>({{tvSearchResults.length}})</span></button>
+    <button class="nav-link text-white rounded-0 d-flex justify-content-between py-3 col-md-12 col-4" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false" [class.active]="peopleSearchResults.length > 0 && moviesSearchResults.length==0 && tvSearchResults.length==0" ><span>people</span><span>({{peopleSearchResults.length}})</span></button>
+  </div>
+  <div class="tab-content w-100" id="v-pills-tabContent">
+    <div class="tab-pane fade show active" id="v-pills-movies" role="tabpanel" aria-labelledby="v-pills-movies-tab" [class.show]="moviesSearchResults.length >0 || tvSearchResults.length==0 && peopleSearchResults.length==0">
+      <div *ngIf="moviesSearchResults.length>0; else noMatchedMovies">
+      <app-movies-search-results [moviesSearchResults]="moviesSearchResults"></app-movies-search-results></div>
+      <ng-template #noMatchedMovies>
+        <p class="text-white">There are no movies that matched your search</p>
+      </ng-template>
+      </div>
+    <div class="tab-pane fade" id="v-pills-tv" role="tabpanel" aria-labelledby="v-pills-tv-tab"
+    [class.show]="tvSearchResults.length > 0  && moviesSearchResults.length==0 && peopleSearchResults.length==0" [class.active]="tvSearchResults.length > 0  && moviesSearchResults.length==0 && peopleSearchResults.length==0"
+    >
+    <div *ngIf="tvSearchResults.length>0; else noMatchedTv">
+    <app-tv-search-results [tvSearchResults]="tvSearchResults"></app-tv-search-results>
+  </div>
+  <ng-template #noMatchedTv>
+    <p class="text-white">There are no tv shows that matched your search</p>
+  </ng-template>
+</div>
+    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" [class.show]="peopleSearchResults.length > 0  && moviesSearchResults.length==0 && tvSearchResults.length==0" [class.active]="peopleSearchResults.length > 0  && moviesSearchResults.length==0 && tvSearchResults.length==0">
+      <div *ngIf="peopleSearchResults.length>0; else noMatchedPeople">
+      <app-people-search-results [peoplesSearchResults]="peopleSearchResults"></app-people-search-results>
+</div>
+<ng-template #noMatchedPeople>
+  <p class="text-white">There are no people that matched your search.</p>
+</ng-template>
+    </div>
+
+  </div>
+</div>
+</div>
+</section>
+

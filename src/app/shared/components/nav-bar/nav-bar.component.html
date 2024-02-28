@@ -1,0 +1,59 @@
+<nav class="navbar navbar-dark  navbar-expand-lg fixed-top py-0 px-4" [ngClass]="{'bg-black':isScrolled}">
+  <div class="container-fluid justify-content-start" [ngClass]="{'border-bottom':!isScrolled}">
+    <a class="navbar-brand p-0" href="#" ><img src="./assets/images/logo.png" alt="logo" [ngStyle]="{'height':isScrolled?'60px':'70px'}">
+    </a>
+
+    <button class="navbar-toggler border-0 py-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+      <div class="menu-icon">
+        <span class="d-block position-relative"></span>
+      </div>
+    </button>
+    <form class="d-flex ms-auto multi-search me-4 mt-2">
+      <input class="form-control me-2 bg-transparent border-0 text-white rounded-0" type="text" placeholder="Search"  [(ngModel)]="searchQuery" name="searchInput" (keydown.enter)="search()">
+      <button class="btn" type="submit" (click)="search()"><i class="fa-solid fa-magnifying-glass text-white "></i></button>
+    </form>
+    <div class="offcanvas offcanvas-start body-bg" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header pb-0">
+        <a class="navbar-brand mx-auto ps-4" href="#"><img src="./assets/images/logo.png" alt="logo" height="70">
+        </a>
+        <button type="button" class="btn text-white main-hover" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-xmark fa-2x"></i>
+        </button>
+      </div>
+
+      <div class="offcanvas-body pt-0 text-center">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link position-relative main-hover py-0 text-white" aria-current="page" routerLink="home" routerLinkActive="active" [ngStyle]="{'line-height':isScrolled?'55px':'75px'}">Home</a>
+          </li>
+          <li class="nav-item dropdown mx-lg-4">
+            <a class="nav-link dropdown-toggle main-hover text-capitalize py-0 text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active" [ngStyle]="{'line-height':isScrolled?'55px':'75px'}">
+              movies
+            <ul class="dropdown-menu dropdown-menu-light border-0 shadow-none rounded-0 text-center text-lg-start py-0">
+              <li><a class="dropdown-item main-hover text-capitalize border-bottom py-3" routerLink="movie/popular" routerLinkActive="active-item">popular</a></li>
+              <li><a class="dropdown-item main-hover text-capitalize border-bottom py-3" routerLink="movie/top_rated" routerLinkActive="active-item">Top Rated</a></li>
+              <li><a class="dropdown-item main-hover text-capitalize border-bottom py-3" routerLink="movie/trending" routerLinkActive="active-item">trending</a></li>
+            </ul>
+            </a>
+          </li>
+          <li class="nav-item dropdown me-md-4">
+            <a class="nav-link dropdown-toggle main-hover py-0 text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false" [ngStyle]="{'line-height':isScrolled?'55px':'75px'}" routerLinkActive="active">
+              Tv Showes
+              <ul class="dropdown-menu dropdown-menu-light border-0 shadow-none rounded-0 text-center text-lg-start py-0">
+                <li><a class="dropdown-item main-hover text-capitalize border-bottom py-3" routerLink="tv/popular" routerLinkActive="active-item">popular</a></li>
+                <li><a class="dropdown-item main-hover text-capitalize border-bottom py-3" routerLink="tv/top_rated" routerLinkActive="active-item">Top Rated</a></li>
+                <li><a class="dropdown-item main-hover text-capitalize border-bottom py-3" routerLink="tv/trending" routerLinkActive="active-item">trending</a></li>
+              </ul>
+            </a>
+
+          </li>
+          <li class="nav-item me-md-4">
+            <a class="nav-link position-relative  main-hover py-0 text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false" [ngStyle]="{'line-height':isScrolled?'55px':'75px'}" routerLink="genres" routerLinkActive="active">
+              Categories
+              </a>
+              </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

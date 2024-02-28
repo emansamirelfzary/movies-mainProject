@@ -1,0 +1,41 @@
+footer ul li a{
+  color: #89898a;
+}
+
+footer .social span{
+  color:white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #333333;
+  display: inline-block;
+}
+
+footer .social span i {
+  transition: .5s;
+
+}
+
+footer .social span::after{
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: var(--main-color);
+  border-radius: 50%;
+  transition: .5s;
+
+}
+
+footer .social span:hover::after{
+  width: 100%;
+  height: 100%;
+}
+
+footer .social span:hover i{
+  color: black;
+}
+

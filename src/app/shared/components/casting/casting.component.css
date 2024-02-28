@@ -1,0 +1,11 @@
+.casting{
+  padding-block: 80px;
+}
+.person-img{
+ max-width: 175px !important;
+}
+
+
+.person-info span{
+font-size: .9rem;
+}

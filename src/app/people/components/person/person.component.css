@@ -1,0 +1,30 @@
+.person-info table tbody{
+  vertical-align: top;
+}
+
+.person-info .btn{
+  font-size: .9rem;}
+
+  .person-info .btn::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: white;
+    border-radius: 5rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .5s;
+    z-index: 1;
+  }
+
+  .person-info .btn:hover::before{
+    width: 97%;
+    height: 95%;
+  }
+
+  .person-info .btn:hover span{
+    color: black;
+  }
+

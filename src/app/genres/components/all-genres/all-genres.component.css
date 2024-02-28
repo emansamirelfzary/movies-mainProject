@@ -1,0 +1,41 @@
+.slide-animation{
+height: 400px;
+}
+
+.slide-animation .poster{
+  border: 1px solid transparent;
+}
+
+
+.slide-animation a::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .4);
+  z-index: 9;
+}
+
+.slide-animation img{
+  transition: .5s;
+}
+
+.slide-animation:hover img{
+  scale: 1.2;
+}
+
+.slide-animation .media-info{
+z-index: 999;  
+}
+
+@media screen and (max-width:768px) {
+  .slide-animation{
+    height: auto !important;
+    } 
+    .media-info h2{
+      font-size:1.5rem ;
+    }
+  
+}

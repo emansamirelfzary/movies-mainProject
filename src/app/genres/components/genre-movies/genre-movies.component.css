@@ -1,0 +1,19 @@
+.genre
+{
+min-height: 45vh;
+}
+.page-item .active{
+    color: var(--main-color) !important;
+  }
+
+.genre-media{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
+
+
+.genremedia-info{
+    border-color:#444546 !important;
+}
+
+.genremedia-info span, .genremedia-info p{
+    font-size: .8rem;
+}

@@ -1,0 +1,44 @@
+<section class="sec-padding home-tv">
+  <div class="container">
+    <div class="px-md-5">
+    <div class="text-white">
+      <h2 class="h3">Trending Tv Shows</h2>
+      <a class="btn main-bg rounded-pill px-5 text-white mt-3 mb-4 border-danger" routerLink="/tv/trending">View More <i class="fa-solid fa-arrow-right ms-4"></i></a>
+    </div>
+ <div>
+  <owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let series of homeTvSeries">
+      <ng-template carouselSlide>
+        <a [routerLink]="['/tvsereisdetails',series.id]">
+      <div class="tv-series">
+        <div class="position-relative">
+        <div class="series-overlay position-absolute w-100 h-100 start-0 top-0"></div>
+        <div class="overflow-hidden border series-img">
+        <img [src]="seriesImg+series.poster_path" alt="series" >
+        </div>
+        </div>
+        <div class=" position-absolute series-info-home p-3 w-100 start-0">
+          <div class=" border-bottom title">
+          <span class="main text-uppercase">review <span class="mx-2">.</span>tv</span>
+          <h2 class="text-white h4 my-2">{{series.name}}</h2>
+          </div>
+          <div class="vote mt-2">
+            <span *ngIf="series.vote_average>=2"><i class="fa-solid fa-star text-warning"></i></span>
+            <span *ngIf="series.vote_average>=4"><i class="fa-solid fa-star text-warning"></i></span>
+            <span *ngIf="series.vote_average>=6"><i class="fa-solid fa-star text-warning"></i></span>
+            <span *ngIf="series.vote_average>=8"><i class="fa-solid fa-star text-warning"></i></span>
+            <span *ngIf="series.vote_average>=9"><i class="fa-solid fa-star text-warning"></i></span>
+          <span class="ms-2 text-white">{{series.vote_average.toFixed(0)}}/10</span>
+          </div>
+        </div>
+        </div>
+        </a>
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+ </div>
+  </div>
+  </div>
+</section>
