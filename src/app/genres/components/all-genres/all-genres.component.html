@@ -1,9 +1,12 @@
 <section class="sec-padding all-genres">
-  <div class="container">
-    <div class="row mt-5 mt-sm-0">
+  <div class="container-fluid">
+  <div class="row mx-0 gx-1">
+  <div class="film-strip movie-film col-1">
+  </div>
+    <div class="col-10 row mt-5 mt-sm-0">
       <div class="col-4 d-sm-block d-none">
         <div class=" overflow-hidden slider">
-              <div  *ngFor="let movie of trendingMovies" [@moviesslideAnimation] class="slide-animation overflow-hidden p-3">
+              <div  *ngFor="let movie of trendingMovies" [@moviesslideAnimation] class="slide-animation overflow-hidden py-3">
                 <a [routerLink]="['/moviedetails',movie.id]" class="position-relative d-block h-100 overflow-hidden">
                 <div class=" overflow-hidden poster">
                    <img [src]="mediaImg+movie.poster_path" alt="poster" class="w-100">
@@ -23,11 +26,11 @@
       <ul class="ps-0">
         <li *ngFor="let genre of allGenres"><h2 class="mb-3"><a class="text-white main-hover" [routerLink]="['/showgenres',genre.id]">{{genre.name}}</a></h2></li>
       </ul>
-    </div> 
+    </div>
   </div>
   <div class="col-4 d-sm-block d-none">
     <div class=" overflow-hidden slider">
-          <div  *ngFor="let tv of trendingTv" [@tvslideAnimation] class="slide-animation tv overflow-hidden  p-3">
+          <div  *ngFor="let tv of trendingTv" [@tvslideAnimation] class="slide-animation tv overflow-hidden  py-3">
             <a [routerLink]="['/tvsereisdetails',tv.id]" class="position-relative d-block h-100 overflow-hidden">
             <div class=" overflow-hidden poster">
                <img [src]="mediaImg+tv.poster_path" alt="poster" class="w-100">
@@ -42,8 +45,9 @@
           </div>
   </div>
   </div>
-      
-    </div>
-   
+  </div>
+  <div class="film-strip col-1 tv-film">
+  </div>
+  </div>
   </div>
 </section>

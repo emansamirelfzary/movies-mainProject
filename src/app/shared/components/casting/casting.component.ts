@@ -46,9 +46,9 @@ export class CastingComponent implements OnInit{
         items: 2,
         margin:5
       },
-      400: {
+      300: {
         items: 3,
-        margin:10
+        margin:5
       },
       600:{
         items:4,
@@ -56,11 +56,11 @@ export class CastingComponent implements OnInit{
       },
       740: {
         items: 5,
-        margin:20
+        margin:10
       },
       940: {
         items: 7,
-        margin:20,
+        margin:15,
       }
     },
     nav: true

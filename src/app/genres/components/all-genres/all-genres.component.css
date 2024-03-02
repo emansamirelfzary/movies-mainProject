@@ -1,6 +1,45 @@
+.film-strip{
+  background: url(../../../../assets/images/film-strip.svg);
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: contain;
+  height: inherit;
+}
+.movie-film{
+    animation: moviefilm 10s linear infinite;
+
+}
+.tv-film{
+    animation: tvfilm 10s linear infinite;
+
+}
+@keyframes moviefilm {
+  0%{
+    background-position: 0 0;
+    }
+
+
+  100%{
+background-position:0 2000px ;  }
+
+}
+@keyframes tvfilm {
+  0%{
+    background-position: 0 0;
+    }
+
+
+  100%{
+background-position:0 -2000px ;  }
+
+}
+
+
+
 .slide-animation{
 height: 400px;
 }
+
 
 .slide-animation .poster{
   border: 1px solid transparent;
@@ -27,15 +66,15 @@ height: 400px;
 }
 
 .slide-animation .media-info{
-z-index: 999;  
+z-index: 999;
 }
 
 @media screen and (max-width:768px) {
   .slide-animation{
     height: auto !important;
-    } 
+    }
     .media-info h2{
       font-size:1.5rem ;
     }
-  
+
 }
